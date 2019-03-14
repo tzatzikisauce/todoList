@@ -41,7 +41,7 @@ var todoList = {
     var totalTodos = this.todos.length;
     var completedTodos = 0;
     
-    //get umber of completed todos.
+    //get number of completed todos.
     for (var i = 0; i< totalTodos; i++){
       if (this.todos[i].completed === true) {
         completedTodos++;
@@ -52,7 +52,7 @@ var todoList = {
       for (var i = 0; i < totalTodos; i++) {
         this.todos[i].completed = false;
       }
-    // Case 2: if everythings not true, make everything true
+    // Case 2: if everything's not true, make everything true
     }else{
       for (var i = 0; i < totalTodos; i++) {
         this.todos[i].completed = true;
@@ -62,14 +62,17 @@ var todoList = {
   }
 };
 
+// want to get access to the display todos button.
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
 
+// Want to run display Todos method, when someone clicks the display todos button
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
 
-todoList.addTodo('first');
-
-todoList.addTodo('second');
-//todoList.displayTodos();
-todoList.toggleCompleted(0);
-//todoList.toggleCompleted(1);
-todoList.toggleAll();
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
 
 
